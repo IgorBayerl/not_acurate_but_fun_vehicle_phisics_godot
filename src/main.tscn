@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgfcdkykn8l24"]
+
+[ext_resource type="PackedScene" uid="uid://k1bxngqr2ksh" path="res://src/map/map_city.tscn" id="1_prjma"]
+[ext_resource type="Script" path="res://src/camera.gd" id="2_b7awj"]
+[ext_resource type="PackedScene" uid="uid://byqcssvgo1ib3" path="res://src/custom_raycast_vehicle/raycast_vehicle.tscn" id="3_mfo8n"]
+
+[node name="Main" type="Node3D"]
+
+[node name="MapCity" parent="." instance=ExtResource("1_prjma")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.952049, 0.305945, 0, -0.305945, 0.952049, 13.3551, 4.56858, 27.3714)
+script = ExtResource("2_b7awj")
+
+[node name="RaycastVehicle" parent="." instance=ExtResource("3_mfo8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3551, 2.2359, 21.3126)
+
+[node name="CameraPivot" type="Node3D" parent="RaycastVehicle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32413, 5.89862)
